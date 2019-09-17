@@ -1,7 +1,7 @@
 import React from 'react';
-import Message from './message';
+import Message from './Message';
 
-const MessageList = ({from, messages, me}) => {
+const MessagesList = ({from, messages, me}) => {
     return (
         <div className="chat-history">
             {
@@ -13,4 +13,4 @@ const MessageList = ({from, messages, me}) => {
     )
 }
 
-export default MessageList;
+export default MessagesList;

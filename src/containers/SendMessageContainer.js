@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import uuid from 'uuid';
-import MessageInput from '../components/type-message';
-import {asyncSendMessage} from '../actions/messages';
+import MessageInput from '../components/MessageInput';
+import {asyncSendMessage} from '../actions/sendMessage';
 
 class SendMessageContainer extends Component {
     constructor(props) {

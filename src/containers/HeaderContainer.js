@@ -6,7 +6,6 @@ import Header from '../components/Header';
 class HeaderContainer extends Component {
   render(){
     const to = this.props.to;
-
     return (
       <Header to={to}/>
     );

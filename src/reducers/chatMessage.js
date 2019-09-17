@@ -1,14 +1,10 @@
 import * as types from '../constants/actionTypes';
 
-const defaultState = {
-    messages : {
-        'viraj_shah-chat_bot' : []
-    },
-    from : { id : 'viraj_shah', name : 'Viraj Shah'},
-    to : { id : 'chat_bot', name : 'Chat Bot'}
-};
+import {defaultState} from '../constants/defaultState';
 
-export const textMessageReducer = (state = defaultState, action) =>{
+const initialState = localStorage.getItem('chat-state') !== null ? JSON.parse(localStorage.getItem('chat-state')) : defaultState;
+
+export const chatMessageReducer = (state = (initialState), action) =>{
     let {from,to} = state;
 
     switch(action.type){
@@ -21,6 +17,8 @@ export const textMessageReducer = (state = defaultState, action) =>{
             }
 
             newMessage[textMessageKey] = [...state.messages[textMessageKey], action.message];
+
+            localStorage.setItem('chat-state',JSON.stringify({...state,messages : newMessage}));
 
                 return {
                     ...state,

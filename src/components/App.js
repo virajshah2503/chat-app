@@ -8,9 +8,9 @@ import '../assets/css/index.css';
 
 const App = (props) => {
     return (
-        <div>
+        <div id="main-container">
         	<HeaderContainer/>
-        	<div className="main">
+        	<div id="chat-window-container">
         		<ChatHistoryContainer/>
         		<div className="message-form">
         			<div className="container">
@@ -20,7 +20,6 @@ const App = (props) => {
         	</div>
         </div>
     )
-
 }
 
 export default App;

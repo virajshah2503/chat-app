@@ -1,31 +1,30 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-import MessageList from '../components/message-list';
-import ChatHistory from '../services/chathistory';
+import MessagesList from '../components/MessagesList';
+import ChatHistory from '../services/chatHistory';
 
 class ChatHistoryContainer extends Component {
-  constructor(){
-    super()
-    this.chathistoryRef = React.createRef();
+  componentDidMount() {
+      document.scrollingElement.scrollTop = document.getElementById('chat-window-container').scrollHeight;
   }
 
-  componentDidUpdate(){
-
+  componentDidUpdate() {
+      document.scrollingElement.scrollTop = document.getElementById('chat-window-container').scrollHeight;
   }
 
   render(){
     const {messages, from, messageList} = this.props;
+
     return (
       !(Object.keys(messageList).length === 0)
       ?
-      <MessageList
+      <MessagesList
           messages = {messages}
           me = {from}
       />
       :
-      <div className = "blank">
-      </div>
+      ""
     )
   }
 }
