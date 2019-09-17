@@ -1,7 +1,12 @@
 import React from 'react';
 
+/*show chats between chat bot and user*/
 import ChatHistoryContainer from '../containers/ChatHistoryContainer';
+
+/*send message to bot form*/
+
 import SendMessageContainer from '../containers/SendMessageContainer';
+
 import HeaderContainer from '../containers/HeaderContainer';
 
 import '../assets/css/index.css';

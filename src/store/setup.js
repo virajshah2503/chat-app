@@ -5,6 +5,7 @@ import socketConfig from '../socket/setup';
 
 const composeEnhancers= window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
+/*setup store once web socket connection is extablished*/
 const configureStore = () => {
 
   return socketConfig().then(({ send, receive }) => {

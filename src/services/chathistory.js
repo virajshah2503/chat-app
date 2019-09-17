@@ -1,5 +1,7 @@
+import getMessageKey from '../utils/getMessageKey';
+
 export default ({to, from, messages}) =>{
-    let msgKey= from.id + '-' + to.id;
+    let msgKey= getMessageKey(from,to);
 
     if(msgKey in messages){
         return messages[msgKey];

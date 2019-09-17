@@ -60,7 +60,6 @@ class SendMessageContainer extends Component {
                         }
                         dispatch(asyncSendMessage(messageFormat))
                     }
-
     }
   }
 }

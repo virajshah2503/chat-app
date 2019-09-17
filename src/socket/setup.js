@@ -8,6 +8,7 @@ const configureSocket = () =>{
       webSocket.onmessage = (event) => {
         let data= JSON.parse(event.data);
 
+        /*mirror response*/
         data.message.messageid  += "1";
         let temp= data.message.to;
         data.message.to= data.message.from;

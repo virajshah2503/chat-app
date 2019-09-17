@@ -2,6 +2,8 @@ import * as types from '../constants/actionTypes';
 
 import {defaultState} from '../constants/defaultState';
 
+import getMessageKey from '../utils/getMessageKey';
+
 const initialState = localStorage.getItem('chat-state') !== null ? JSON.parse(localStorage.getItem('chat-state')) : defaultState;
 
 export const chatMessageReducer = (state = (initialState), action) =>{
@@ -10,7 +12,7 @@ export const chatMessageReducer = (state = (initialState), action) =>{
     switch(action.type){
         case types.SEND_MESSAGE:
 
-            let textMessageKey = from.id + '-' + to.id;
+            let textMessageKey = getMessageKey(from,to);
 
             let newMessage = {
                 ...state.messages

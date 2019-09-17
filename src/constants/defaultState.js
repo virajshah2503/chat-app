@@ -3,6 +3,5 @@ export const defaultState = {
         'viraj_shah-chat_bot' : []
     },
     from : { id : 'viraj_shah', name : 'Viraj Shah'},
-    to : { id : 'chat_bot', name : 'Chat Bot'},
-    isConnectionEstablished : true
+    to : { id : 'chat_bot', name : 'Chat Bot'}
 };

@@ -6,10 +6,14 @@ import ChatHistory from '../services/chatHistory';
 
 class ChatHistoryContainer extends Component {
   componentDidMount() {
-      document.scrollingElement.scrollTop = document.getElementById('chat-window-container').scrollHeight;
+      this.scrollToBottom()
   }
 
   componentDidUpdate() {
+      this.scrollToBottom()
+  }
+
+  scrollToBottom(){
       document.scrollingElement.scrollTop = document.getElementById('chat-window-container').scrollHeight;
   }
 
